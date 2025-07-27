@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 // Connect to MongoDB
 mongoose
-  .connect('mongodb+srv://sandeepreddybheema:e5pXjaH0J9SmevWi@debatehub.xmn2riu.mongodb.net/debate-app', {
+  .connect('mongodb+srv://sandeepreddybheema:e5pXjaH0J9SmevWi@debatehub.xmn2riu.mongodb.net', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
