@@ -33,7 +33,7 @@ export class LoginComponent {
     this.isLoading = true; // Set loading state to true during API call
 
     // Post login data to the server
-    this.http.post('http://localhost:3000/api/login', this.loginData).subscribe(
+    this.http.post('https://debate-hub.onrender.com/api/login', this.loginData).subscribe(
       (response: any) => {
         const { userId, token, role } = response; // Ensure these fields are returned by the backend
 

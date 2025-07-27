@@ -23,7 +23,7 @@ export class ForgotPasswordComponent {
     const payload = { email: this.email };
 
     // Send the email to the backend to initiate password reset
-    this.http.post('http://localhost:3000/api/forgot-password', payload).subscribe(
+    this.http.post('https://debate-hub.onrender.com/api/forgot-password', payload).subscribe(
       (response: any) => {
         this.successMessage = response.message; // Show success message
       },

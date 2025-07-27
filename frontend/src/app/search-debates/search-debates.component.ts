@@ -28,7 +28,7 @@ export class SearchDebatesComponent {
 
   // Method to fetch debates from the backend
   fetchDebates() {
-    this.http.get('http://localhost:3000/api/debates').subscribe(
+    this.http.get('https://debate-hub.onrender.com/api/debates').subscribe(
       (response: any) => {
         this.debates = response.debates;  // Assuming the backend returns a list of debates in 'debates'
       },
@@ -66,7 +66,7 @@ export class SearchDebatesComponent {
     this.selectedOptionIndex = i;
     if (this.selectedDebate && this.selectedOptionIndex >= 0) {
       // Send vote without token verification (no Authorization header)
-      this.http.post(`http://localhost:3000/api/vote`, {
+      this.http.post(`https://debate-hub.onrender.com/api/vote`, {
         userId:   localStorage.getItem('userId'),// Assuming userId is part of the debate data
         debateId: this.selectedDebate._id,
         optionIndex: this.selectedOptionIndex

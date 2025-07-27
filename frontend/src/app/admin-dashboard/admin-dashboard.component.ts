@@ -43,7 +43,7 @@ export class AdminDashboardComponent implements OnInit {
 
   // Fetch all debates from the server
   fetchDebates(): void {
-    this.http.get('http://localhost:3000/api/debates').subscribe(
+    this.http.get('https://debate-hub.onrender.com/api/debates').subscribe(
       (response: any) => {
         if (Array.isArray(response)) {
           this.debates = response;
@@ -61,7 +61,7 @@ export class AdminDashboardComponent implements OnInit {
 
   // Fetch all users from the server
   fetchUsers(): void {
-    this.http.get('http://localhost:3000/api/users').subscribe(
+    this.http.get('https://debate-hub.onrender.com/api/users').subscribe(
       (response: any) => {
         this.users = response;
         this.filteredUsers = [...this.users]; // Initialize filtered users
@@ -75,7 +75,7 @@ export class AdminDashboardComponent implements OnInit {
   }
 // Delete a user by ID
 deleteUser(userId: string): void {
-  this.http.get(`http://localhost:3000/api/debates`).subscribe(
+  this.http.get(`https://debate-hub.onrender.com/api/debates`).subscribe(
     (response: any) => {
       if (response.debates && response.debates.length > 0) {
         // Filter debates to find only those associated with the given user
@@ -135,7 +135,7 @@ deleteDebate(debateId: string, callback: () => void): void {
     'Authorization': `Bearer ${token}`
   };
 
-  this.http.delete(`http://localhost:3000/api/debates/${debateId}`, { headers }).subscribe(
+  this.http.delete(`https://debate-hub.onrender.com/api/debates/${debateId}`, { headers }).subscribe(
     (response) => {
       console.log(`Debate ${debateId} deleted successfully`);
       // Trigger the callback after successful deletion
@@ -151,7 +151,7 @@ deleteDebate(debateId: string, callback: () => void): void {
 // Delete a user from the database
 // Delete a user from the database
 deleteUserFromDatabase(userId: string): void {
-  this.http.delete(`http://localhost:3000/api/users/${userId}`).subscribe(
+  this.http.delete(`https://debate-hub.onrender.com/api/users/${userId}`).subscribe(
     () => {
       console.log('User deleted successfully.');
       // Remove the user from the UI
@@ -212,7 +212,7 @@ deleteUserFromDatabase(userId: string): void {
     this.sortUsers();
   }
   SuspendUser(userId: string,issuspended: boolean): void {
-    const apiUrl = `http://localhost:3000/api/users/${userId}/suspend`;
+    const apiUrl = `https://debate-hub.onrender.com/api/users/${userId}/suspend`;
   
     const token = localStorage.getItem('token');
     if (!token) {
@@ -289,7 +289,7 @@ saveDebateChanges(): void {
     'Authorization': `Bearer ${token}`
   };
 
-  this.http.put(`http://localhost:3000/api/debates/${this.editingDebate._id}`, this.editingDebate, { headers }).subscribe(
+  this.http.put(`https://debate-hub.onrender.com/api/debates/${this.editingDebate._id}`, this.editingDebate, { headers }).subscribe(
     (response: any) => {
       console.log(`Debate ${this.editingDebate._id} updated successfully.`);
       // Update the local debates list

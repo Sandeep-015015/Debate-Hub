@@ -67,7 +67,7 @@ export class CreateDebateComponent {
     this.debate.voteCount = this.debate.options.map(() => 0);
 
     // Make the HTTP request to create the debate
-    this.http.post('http://localhost:3000/api/debates', this.debate, { headers }).subscribe(
+    this.http.post('https://debate-hub.onrender.com/api/debates', this.debate, { headers }).subscribe(
       (response) => {
         console.log('Debate created successfully:', response);
         this.successMessage = 'Debate created successfully!';

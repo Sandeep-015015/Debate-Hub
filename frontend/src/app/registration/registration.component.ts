@@ -47,7 +47,7 @@ export class RegistrationComponent {
     };
 
     // Send registration data to the backend
-    this.http.post('http://localhost:3000/api/register', registrationData).subscribe(
+    this.http.post('https://debate-hub.onrender.com/api/register', registrationData).subscribe(
       (response: any) => {
         this.registrationSuccess = true;  // Show success message
         this.errorMessage = '';

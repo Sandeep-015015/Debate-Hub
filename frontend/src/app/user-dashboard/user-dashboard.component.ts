@@ -35,7 +35,7 @@ export class UserDashboardComponent implements OnInit {
   }
 
   fetchUserName() {
-    const url = `http://localhost:3000/api/users/${this.userId}`; // Replace with your API endpoint
+    const url = `https://debate-hub.onrender.com/api/users/${this.userId}`; // Replace with your API endpoint
 
     this.http.get<{ name: string }>(url).subscribe({
       next: (response) => {
@@ -61,7 +61,7 @@ export class UserDashboardComponent implements OnInit {
     };
 
     // Fetch debates for the specific userId
-    this.http.get(`http://localhost:3000/api/debates/${this.userId}`, { headers }).subscribe(
+    this.http.get(`https://debate-hub.onrender.com/api/debates/${this.userId}`, { headers }).subscribe(
       (response: any) => {
         this.debates = response.debates || [];  // Assuming backend sends 'debates' array
         console.log('Debates:', this.debates);
@@ -98,7 +98,7 @@ export class UserDashboardComponent implements OnInit {
       'Authorization': `Bearer ${token}`
     };
 
-    this.http.delete(`http://localhost:3000/api/debates/${debateId}`, { headers }).subscribe(
+    this.http.delete(`https://debate-hub.onrender.com/api/debates/${debateId}`, { headers }).subscribe(
       (response) => {
         console.log('Debate deleted successfully');
         // Reload the debates after deletion

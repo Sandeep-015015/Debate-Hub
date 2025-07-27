@@ -23,7 +23,7 @@ export class ResetPasswordComponent {
       const resetData = { password: this.password };
 
       // Call backend to reset password
-      this.http.post('http://localhost:3000/api/reset-password', resetData).subscribe(
+      this.http.post('https://debate-hub.onrender.com/api/reset-password', resetData).subscribe(
         (response: any) => {
           alert('Password reset successfully!');
           this.router.navigate(['/login']);
