@@ -1,0 +1,92 @@
+.form-container {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    background-color: #a8e6e8;
+    text-align: center;
+    border: 2px solid black;
+  }
+  input {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 80%;
+  }
+  button {
+    background-color: orange;
+    padding: 8px 16px;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  a {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+/* Success message container */
+.success-message {
+    padding: 20px;
+    background-color: #e0ffe0;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    color: #4CAF50;
+  }
+  
+  .success-message h2 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+  }
+  
+  .success-message p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .success-message strong {
+    color: #333;
+  }
+  
+  a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 1.1em;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .radio-group {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.radio-group p {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #6879e3;
+    font-size: 16px;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+    transition: color 0.7s ease;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+    accent-color: #3498db;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+  
+  
